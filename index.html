@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المهندس  | أكاديمية البرمجة والذكاء الاصطناعي</title>
+    <!-- ربط ملف الـ CSS -->
+    <link rel="stylesheet" href="cs.css">
+    <!-- مكتبة Font Awesome للأيقونات -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- خط Tajawal العربي الحديث -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- كانفاس الخلفية المتحركة (نجوم، شهب، وبرق) -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- شريط التنقل (Header) -->
+    <header class="header">
+        <div class="container">
+            <a href="#" class="logo"><i class="fas fa-bolt neon-icon"></i> المهندس <span>إسلام عادل</span></a>
+            <nav class="navbar">
+                <a href="#home">الرئيسية</a>
+                <a href="#ministry">قرارات الوزارة</a>
+                <a href="#grade1">أولى ثانوي</a>
+                <a href="#grade2">ثانية بكالوريا</a>
+                <a href="#about">عن المهندس</a>
+                <a href="#stats">الإحصائيات</a>
+                <a href="#contact">تواصل معنا</a>
+            </nav>
+            <div class="menu-btn"><i class="fas fa-bars"></i></div>
+        </div>
+    </header>
+
+    <!-- القسم الرئيسي (Home) -->
+    <section class="home" id="home">
+        <div class="container">
+            <div class="home-content">
+                <div class="badge-flash"><i class="fas fa-fire"></i> انطلاقة موسم 2026 - ههيا</div>
+                <h1>المهندس <span>إسلام عادل السيد</span></h1>
+                <h2> <span>مدرس البرمجة والذكاء الاصطناعي </span></h2>
+                <p>مرحبًا بطلبة المستقبل! استعد لرحلة احترافية ملهمة في عالم البرمجة والذكاء الاصطناعي وفقًا لأحدث مناهج وزارة التربية والتعليم لطلاب الصف الأول والثاني الثانوي بمركز ههيا.</p>
+                <div class="btn-group">
+                    <a href="https://wa.me/201127744580?text=مرحباً%20باشمهندس%20إسلام،%20أرغب%20في%20الاستفسار%20عن%20مجموعات%20البرمجة" target="_blank" class="btn primary-btn pulse-glow">
+                        <i class="fab fa-whatsapp"></i> احجز مكانك عبر واتساب
+                    </a>
+                    <a href="#grade1" class="btn secondary-btn">استكشف المناهج</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم إعلانات وقرارات وزارة التربية والتعليم -->
+    <section class="ministry-section" id="ministry">
+        <div class="container">
+            <h2 class="section-title">مستجدات <span>وزارة التربية والتعليم</span></h2>
+            <p class="section-subtitle">أحدث ما أعلنته الوزارة حول منهج البرمجة والتكنولوجيا والتطوير الرقمي</p>
+            
+            <div class="ministry-grid">
+                <div class="ministry-card">
+                    <div class="card-icon"><i class="fas fa-microchip"></i></div>
+                    <span class="tag">تطوير المناهج</span>
+                    <h3>البرمجة والذكاء الاصطناعي</h3>
+                    <p>اعتماد التفكير البرمجي وخوارزميات الذكاء الاصطناعي كمكون أساسي في بناء مهندس المستقبل وفق التحديثات الوزارية الأخيرة.</p>
+                </div>
+                <div class="ministry-card">
+                    <div class="card-icon"><i class="fas fa-laptop-code"></i></div>
+                    <span class="tag">التطبيق العملي</span>
+                    <h3>المشاريع والتطبيق الرقمي</h3>
+                    <p>تركيز النظام الحديث على المشاريع البرمجية العملية (Python & Web) لتأهيل الطلاب لسوق العمل المبكر والمسابقات الوطنية.</p>
+                </div>
+                <div class="ministry-card">
+                    <div class="card-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <span class="tag">التقييم الحديث</span>
+                    <h3>الفهم والاختبارات التفاعلية</h3>
+                    <p>التحول التام من الحفظ والتقين إلى الفهم المنطقي، وتحليل الأكواد، وحل المشكلات التكنولوجية (Problem Solving).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الصف الأول الثانوي (أولى بكالوريا / ثانوي) -->
+    <section class="grade-section" id="grade1">
+        <div class="container">
+            <div class="grade-header">
+                <span class="grade-badge">المرحلة الأولى</span>
+                <h2 class="section-title">برنامج الصف <span>الأول الثانوي</span></h2>
+                <p>تأسيس شامل من الصفر لبناء فكر برمجي متين وتغطية كافة متطلبات الوزارة</p>
+            </div>
+            
+            <div class="topics-grid">
+                <div class="topic-box">
+                    <i class="fas fa-code"></i>
+                    <h4>أساسيات البرمجة والتفكير المنطقي</h4>
+                    <p>تعلم المتغيرات، الجمل الشرطية، والدوال والتكرار ومبادئ حل المشكلات.</p>
+                </div>
+                <div class="topic-box">
+                    <i class="fab fa-html5"></i>
+                    <h4>تطوير المواقع (Web Basics)</h4>
+                    <p>بناء وتصميم أول موقع إلكتروني باستخدام لغات الهيكلة والتنسيق الحديثة.</p>
+                </div>
+                <div class="topic-box">
+                    <i class="fas fa-shield-alt"></i>
+                    <h4>الأمن السيبراني والمواطنة الرقمية</h4>
+                    <p>فهم قواعد حماية البيانات والأمان الرقمي والتصفح الآمن وفق قرارات الوزارة.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الصف الثاني الثانوي (ثانية بكالوريا / ثانوي) -->
+    <section class="grade-section highlight-grade" id="grade2">
+        <div class="container">
+            <div class="grade-header">
+                <span class="grade-badge neon-bg">المرحلة المتقدمة</span>
+                <h2 class="section-title">برنامج الصف <span>الثاني الثانوي</span></h2>
+                <p>العمق التقني: الذكاء الاصطناعي، علم البيانات، ومشاريع البرمجة المتقدمة</p>
+            </div>
+            
+            <div class="topics-grid">
+                <div class="topic-box neon-border">
+                    <i class="fab fa-python"></i>
+                    <h4>لغة بايثون المتقدمة (Python)</h4>
+                    <p>احتراف التعامل مع هيكلة البيانات والأكواد المتقدمة وإدارة البيانات.</p>
+                </div>
+                <div class="topic-box neon-border">
+                    <i class="fas fa-brain"></i>
+                    <h4>مبادئ الذكاء الاصطناعي (AI)</h4>
+                    <p>فهم وتعلم كيفية عمل النماذج الذكية وتدريب الآلة وتحليل البيانات الفعّال.</p>
+                </div>
+                <div class="topic-box neon-border">
+                    <i class="fas fa-project-diagram"></i>
+                    <h4>المشاريع التطبيقية والعملاقة</h4>
+                    <p>بناء مشاريع عمل حقيقية تؤهل الطالب للتفوق في الامتحانات والمسابقات.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم نبذة عني (About) -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">عن <span>المهندس</span></h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <h3>شغف بالتقنية والتعليم في ههيا</h3>
+                    <p>مهندس متخصص في الذكاء الاصطناعي وعلوم البيانات، أكرس خبرتي العملية والأكاديمية لنقل أفضل المهارات البرمجية الحديثة لطلاب المرحلة الثانوية بمركز ههيا وتبسيط المعقد منها بأسلوب حماسي ومبتكر.</p>
+                    <div class="personal-info">
+                        <p><i class="fas fa-user-check"></i> <strong>الاسم:</strong> المهندس إسلام عادل السيد</p>
+                        <p><i class="fas fa-laptop-code"></i> <strong>التخصص:</strong> مهندس ذكاء اصطناعي وعلوم البيانات</p>
+                        <p><i class="fas fa-chalkboard-teacher"></i> <strong>المهنة:</strong> خبير تدريس البرمجة والتكنولوجيا (ههيا)</p>
+                        <p><i class="fas fa-map-marker-alt"></i> <strong>المكان:</strong> مركز ههيا - محافظة الشرقية</p>
+                    </div>
+                </div>
+                <div class="skills-box">
+                    <h3>المهارات التقنية</h3>
+                    <div class="skill-bar">
+                        <span>الذكاء الاصطناعي وتعلّم الآلة (AI & ML)</span>
+                        <div class="progress"><div class="progress-line" style="width: 95%;"></div></div>
+                    </div>
+                    <div class="skill-bar">
+                        <span>علوم البيانات وتحليلها (Data Science)</span>
+                        <div class="progress"><div class="progress-line" style="width: 90%;"></div></div>
+                    </div>
+                    <div class="skill-bar">
+                        <span>لغات البرمجة (Python & Web Technologies)</span>
+                        <div class="progress"><div class="progress-line" style="width: 95%;"></div></div>
+                    </div>
+                    <div class="skill-bar">
+                        <span>أساليب التدريس الحديثة وتبسيط المناهج</span>
+                        <div class="progress"><div class="progress-line" style="width: 98%;"></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الإحصائيات (Stats) -->
+    <section class="stats" id="stats">
+        <div class="container">
+            <h2 class="section-title">إحصائيات <span>وإنجازات</span></h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <i class="fas fa-user-graduate"></i>
+                    <h3 class="counter" data-target="350">0</h3><span>+</span>
+                    <p>طالب تم تدريسهم بنجاح</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-award"></i>
+                    <h3 class="counter" data-target="3">0</h3><span>+</span>
+                    <p>سنوات خبرة في التدريس والبرمجة</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-brain"></i>
+                    <h3 class="counter" data-target="25">0</h3><span>+</span>
+                    <p>مشروع ذكاء اصطناعي وبرمجي</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-bolt"></i>
+                    <h3 class="counter" data-target="100">0</h3><span>%</span>
+                    <p>نسبة التميز والتطوير المستمر</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم التواصل (Contact) -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">تواصل <span>معي مباشرة</span></h2>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <div class="info-item whatsapp-highlight">
+                        <i class="fab fa-whatsapp"></i>
+                        <div>
+                            <h4>واتساب / اتصال تلفوني</h4>
+                            <p dir="ltr">+20 112 774 4580</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <div>
+                            <h4>الموقع والحضور</h4>
+                            <p>مركز ههيا - محافظة الشرقية - مصر</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>أوقات الحجز والاستفسار</h4>
+                            <p>متاح يومياً للرد على الطلاب وأولياء الأمور</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="cta-box">
+                    <h3>هل أنت جاهز لتكون الأفضل في البرمجة؟</h3>
+                    <p>انضم الآن لمجموعات الشرح والتدريب العملي في مركز ههيا مع المهندس إسلام عادل السيد واضمن تفوقك في منهج التكنولوجيا الجديد.</p>
+                    <a href="https://wa.me/201127744580?text=أرغب%20في%20الانضمام%20لمجموعات%20البرمجة%20في%20ههيا" target="_blank" class="btn primary-btn btn-large">
+                        <i class="fab fa-whatsapp"></i> اضغط هنا لبدء المحادثة على واتساب
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- زر واتساب عائم -->
+    <a href="https://wa.me/201127744580?text=مرحباً%20باشمهندس%20إسلام" target="_blank" class="float-whatsapp" title="تواصل عبر الواتساب">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- الفوتر -->
+    <footer>
+        <p>جميع الحقوق محفوظة &copy; 2026 | المهندس إسلام عادل السيد - مركز ههيا</p>
+    </footer>
+
+    <!-- ربط ملف الـ JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

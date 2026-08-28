@@ -1,0 +1,619 @@
+/* ==========================================
+   المتغيرات والتنسيقات الأساسية (Neon Dark Theme)
+   ========================================== */
+:root {
+    --primary-color: #00ff66; /* أخضر فسفوري نيون */
+    --secondary-color: #00e5ff; /* سيان نيون مشع */
+    --bg-color: #080810; /* أسود دافئ عميق */
+    --card-bg: #101221; /* كحلي غامق قريب للأسود */
+    --card-border: rgba(0, 255, 102, 0.2);
+    --text-color: #f8fafc;
+    --text-gray: #a0aec0;
+    --neon-glow: 0 0 15px rgba(0, 255, 102, 0.6);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Tajawal', 'Segoe UI', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    direction: rtl;
+    line-height: 1.7;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* كانفاس الخلفية المتحركة */
+#bg-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ==========================================
+   الهيدر وشريط التنقل
+   ========================================== */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(8, 8, 16, 0.85);
+    backdrop-filter: blur(12px);
+    z-index: 1000;
+    border-bottom: 1px solid rgba(0, 255, 102, 0.15);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 75px;
+}
+
+.header .logo {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--text-color);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.header .logo span {
+    color: var(--primary-color);
+    text-shadow: var(--neon-glow);
+}
+
+.neon-icon {
+    color: var(--primary-color);
+    filter: drop-shadow(0 0 5px var(--primary-color));
+}
+
+.header .navbar {
+    display: flex;
+    gap: 25px;
+}
+
+.header .navbar a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    transition: var(--transition);
+    position: relative;
+}
+
+.header .navbar a:hover {
+    color: var(--primary-color);
+    text-shadow: var(--neon-glow);
+}
+
+.header .menu-btn {
+    display: none;
+    font-size: 1.6rem;
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+/* ==========================================
+   الأقسام العامة والأزرار
+   ========================================== */
+section {
+    padding: 100px 0 80px;
+    position: relative;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.section-title span {
+    color: var(--primary-color);
+    text-shadow: var(--neon-glow);
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--text-gray);
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+}
+
+.btn-group {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 14px 32px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: var(--transition);
+    cursor: pointer;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.primary-btn {
+    background-color: var(--primary-color);
+    color: #000;
+    box-shadow: 0 0 20px rgba(0, 255, 102, 0.4);
+}
+
+.primary-btn:hover {
+    background-color: #39ff14;
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 0 30px rgba(0, 255, 102, 0.8);
+}
+
+.secondary-btn {
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.secondary-btn:hover {
+    background-color: rgba(0, 255, 102, 0.1);
+    transform: translateY(-3px);
+    box-shadow: var(--neon-glow);
+}
+
+.pulse-glow {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 15px rgba(0, 255, 102, 0.4); }
+    50% { box-shadow: 0 0 30px rgba(0, 255, 102, 0.9); }
+    100% { box-shadow: 0 0 15px rgba(0, 255, 102, 0.4); }
+}
+
+/* ==========================================
+   قسم الرئيسية (Home)
+   ========================================== */
+.home {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 120px;
+}
+
+.home-content {
+    max-width: 750px;
+}
+
+.badge-flash {
+    display: inline-block;
+    padding: 6px 16px;
+    background: rgba(0, 255, 102, 0.1);
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.home-content h1 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.home-content h1 span {
+    color: var(--primary-color);
+    text-shadow: var(--neon-glow);
+}
+
+.home-content h2 {
+    font-size: 1.8rem;
+    color: var(--text-gray);
+    margin-bottom: 20px;
+}
+
+.home-content h2 span {
+    color: var(--secondary-color);
+}
+
+.home-content p {
+    color: var(--text-gray);
+    margin-bottom: 35px;
+    font-size: 1.15rem;
+}
+
+/* ==========================================
+   قسم قرارات الوزارة
+   ========================================== */
+.ministry-section {
+    background: rgba(16, 18, 33, 0.6);
+    border-top: 1px solid rgba(0, 255, 102, 0.1);
+    border-bottom: 1px solid rgba(0, 255, 102, 0.1);
+}
+
+.ministry-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.ministry-card {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 16px;
+    border: 1px solid var(--card-border);
+    transition: var(--transition);
+}
+
+.ministry-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--primary-color);
+    box-shadow: var(--neon-glow);
+}
+
+.ministry-card .card-icon {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.ministry-card .tag {
+    display: inline-block;
+    background: rgba(0, 229, 255, 0.15);
+    color: var(--secondary-color);
+    font-size: 0.8rem;
+    padding: 4px 10px;
+    border-radius: 6px;
+    margin-bottom: 12px;
+    font-weight: bold;
+}
+
+.ministry-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.ministry-card p {
+    color: var(--text-gray);
+    font-size: 0.95rem;
+}
+
+/* ==========================================
+   أقسام المراحل الدراسية (أولى وتانية ثانوي)
+   ========================================== */
+.grade-badge {
+    display: inline-block;
+    padding: 5px 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    color: var(--secondary-color);
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.neon-bg {
+    background: var(--primary-color) !important;
+    color: #000 !important;
+    box-shadow: var(--neon-glow);
+}
+
+.grade-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.topics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.topic-box {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: center;
+    transition: var(--transition);
+}
+
+.topic-box:hover {
+    transform: translateY(-5px);
+}
+
+.topic-box i {
+    font-size: 2.8rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.topic-box h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.topic-box p {
+    color: var(--text-gray);
+    font-size: 0.95rem;
+}
+
+.highlight-grade {
+    background: radial-gradient(circle at center, rgba(0, 255, 102, 0.05) 0%, transparent 70%);
+}
+
+.neon-border {
+    border: 1px solid var(--primary-color);
+    box-shadow: inset 0 0 10px rgba(0, 255, 102, 0.1);
+}
+
+/* ==========================================
+   قسم نبذة عني (About)
+   ========================================== */
+.about .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.about .about-text h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: var(--secondary-color);
+}
+
+.about .about-text p {
+    color: var(--text-gray);
+    margin-bottom: 25px;
+}
+
+.about .personal-info p {
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+}
+
+.about .personal-info p i {
+    color: var(--primary-color);
+    margin-left: 10px;
+}
+
+.about .skills-box {
+    background: var(--card-bg);
+    padding: 35px;
+    border-radius: 16px;
+    border: 1px solid var(--card-border);
+}
+
+.about .skills-box h3 {
+    margin-bottom: 25px;
+}
+
+.about .skill-bar {
+    margin-bottom: 20px;
+}
+
+.about .skill-bar span {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.about .skill-bar .progress {
+    background: rgba(255, 255, 255, 0.08);
+    height: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.about .skill-bar .progress-line {
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    height: 100%;
+    border-radius: 5px;
+    box-shadow: var(--neon-glow);
+}
+
+/* ==========================================
+   قسم الإحصائيات (Stats)
+   ========================================== */
+.stats {
+    background: rgba(16, 18, 33, 0.5);
+}
+
+.stats .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    text-align: center;
+}
+
+.stats .stat-card {
+    background: var(--card-bg);
+    padding: 40px 20px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: var(--transition);
+}
+
+.stats .stat-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--primary-color);
+    box-shadow: var(--neon-glow);
+}
+
+.stats .stat-card i {
+    font-size: 2.8rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.stats .stat-card h3 {
+    font-size: 2.8rem;
+    font-weight: 900;
+    display: inline-block;
+    color: #fff;
+}
+
+.stats .stat-card span {
+    font-size: 2rem;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.stats .stat-card p {
+    color: var(--text-gray);
+    margin-top: 10px;
+    font-weight: 700;
+}
+
+/* ==========================================
+   قسم التواصل (Contact)
+   ========================================== */
+.contact .contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: var(--card-bg);
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.info-item i {
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+.whatsapp-highlight {
+    border: 1px solid var(--primary-color);
+    box-shadow: var(--neon-glow);
+}
+
+.whatsapp-highlight i {
+    color: #25d366;
+}
+
+.cta-box {
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: 16px;
+    border: 1px solid var(--primary-color);
+    box-shadow: var(--neon-glow);
+    text-align: center;
+}
+
+.cta-box h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.cta-box p {
+    color: var(--text-gray);
+    margin-bottom: 30px;
+}
+
+.btn-large {
+    width: 100%;
+    justify-content: center;
+    font-size: 1.1rem;
+    padding: 16px;
+}
+
+/* زر واتساب عائم */
+.float-whatsapp {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 30px;
+    left: 30px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 32px;
+    box-shadow: 0 0 20px rgba(37, 211, 102, 0.8);
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.float-whatsapp:hover {
+    transform: scale(1.15) rotate(10deg);
+}
+
+/* ==========================================
+   الفوتر
+   ========================================== */
+footer {
+    text-align: center;
+    padding: 25px;
+    background: #040408;
+    color: var(--text-gray);
+    border-top: 1px solid rgba(0, 255, 102, 0.1);
+}
+
+/* ==========================================
+   التجاوب مع الشاشات الصغيرة (Responsive)
+   ========================================== */
+@media (max-width: 768px) {
+    .header .navbar {
+        display: none;
+    }
+    
+    .header .menu-btn {
+        display: block;
+    }
+
+    .about .about-grid,
+    .contact .contact-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .home-content h1 {
+        font-size: 2.4rem;
+    }
+}
